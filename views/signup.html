@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title>Signup</title>
+        <link rel="stylesheet" href="signup.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">📝Notes App</div>
+            </nav>
+        </header>
+        <main>
+            <section class="signup-section">
+                <h2>Create Your Acoount</h2>
+                <form id="signupform" class="signup-form">
+                    <input type="text" id="name"  placeholder="Your name" required>
+                    <input type="password" id="password" placeholder="password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="/login">Login here</p>
+            </section>
+        </main>
+        <footer>
+            <p>© 2025 Notes App | Keep it simple, keep it secure ✨</p>
+        </footer>
+        <script>
+            document.getElementById('signupform').addEventListener('submit',async function(e){
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const password = document.getElementById('password').value;
+
+                const res = await fetch('/api/users/signup',{
+                    method : 'POST',
+                    headers : {'Content-Type':'application/json'},
+                    body : JSON.stringify({name,password})
+                });
+
+                if (res.ok){
+                    window.location.href = '/login';
+                }
+                else {
+                    const data = await res.json();
+                    alert(data.message || 'Signup failed');
+                }
+            })
+        </script>
+    </body>
+
+</html>

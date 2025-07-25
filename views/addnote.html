@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Note</title>
+  <link rel="stylesheet" href="addnote.css" />
+</head>
+<body>
+  <div class="note-container">
+    <div class="note-header">
+      <span id="datetime"></span>
+    </div>
+    <input type="text" id="title" class="note-title" placeholder="Title..." />
+    <textarea id="content" class="note-content" placeholder="Write your note here..."></textarea>
+
+    <div class="button-group">
+      <button onclick="showCancelPopup()" class="cancel-button">Cancel</button>
+      <button onclick="saveNote()" class="save-button">Save</button>
+    </div>
+  </div>
+
+  <!-- 🔹 Confirmation Popup -->
+  <div id="confirmOverlay" class="confirm-overlay" style="display: none;">
+    <div class="confirm-box">
+      <p>Discard note and return to dashboard?</p>
+      <div class="confirm-buttons">
+        <button onclick="confirmCancel()" class="yes-button">Yes</button>
+        <button onclick="hideCancelPopup()" class="no-button">No</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="addnote.js"></script>
+</body>
+</html>

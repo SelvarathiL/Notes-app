@@ -1,0 +1,97 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  background: url('/images/backgroundimg.png') repeat;
+  background-size: 300px;
+  filter: brightness(1.15);
+  color: #3a2f2f;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  background: #fbe9d0;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid #e6a756;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #b3411f;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d94f04;
+}
+
+.logout-btn button {
+  padding: 0.5rem 1rem;
+  background-color: #d94f04;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.logout-btn button:hover {
+  background-color: #b84102;
+}
+
+.notes-section {
+  padding: 30px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.note-card {
+  background: white;
+  border: 2px solid #f9d5a7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  cursor: pointer;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.note-card:hover {
+  background-color: #fff9f2;
+}
+
+.note-card.add {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: bold;
+  border: 2px solid #a5d6a7;
+}
+
+footer {
+  background: #f9e1c0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #5a3b1f;
+  border-top: 4px solid #e0a958;
+}
